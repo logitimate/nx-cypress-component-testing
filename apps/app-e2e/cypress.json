@@ -1,12 +1,8 @@
 {
-  "fileServerFolder": ".",
-  "fixturesFolder": "./src/fixtures",
-  "integrationFolder": "./src/integration",
-  "modifyObstructiveCode": false,
-  "supportFile": "./src/support/index.ts",
-  "pluginsFile": false,
-  "video": true,
-  "videosFolder": "../../dist/cypress/apps/app-e2e/videos",
-  "screenshotsFolder": "../../dist/cypress/apps/app-e2e/screenshots",
-  "chromeWebSecurity": false
+  "pluginsFile": "./cypress/plugins/index.ts",
+  "supportFile": "./cypress/support/index.ts",
+  "component": {
+    "testFiles": "**/*.cy-spec.{js,ts,jsx,tsx}",
+    "componentFolder": "./src"
+  }
 }

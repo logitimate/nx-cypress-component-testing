@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/button-lib",
+  "sourceRoot": "libs/button-lib/src",
+  "prefix": "cypress-component-testing",
+  "architect": {
+    "build": {
+      "builder": "@nrwl/angular:package",
+      "outputs": ["dist/libs/button-lib"],
+      "options": {
+        "project": "libs/button-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/button-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/button-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "builder": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/button-lib"],
+      "options": {
+        "jestConfig": "libs/button-lib/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "builder": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/button-lib/src/**/*.ts",
+          "libs/button-lib/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
